@@ -6,4 +6,7 @@ export const MainContainer = styled.div`
   justify-content: center;
   color: red;
 `;
+export const CustomButton = styled.button`
+  height: 5rem;
+`;
 export const InputContainer = styled.div``;

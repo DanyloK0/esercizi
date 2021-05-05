@@ -17,6 +17,7 @@ export const Counter = () => {
     <MainContainer>
       <InputContainer>
         <CustomButton text="+" event={() => handleClick("Add")} />
+        <p>{counter}</p>
         <CustomButton text="-" event={() => handleClick("Subtract")} />
       </InputContainer>
     </MainContainer>
