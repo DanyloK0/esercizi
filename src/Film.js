@@ -2,23 +2,22 @@ import React, { useEffect, useState } from "react";
 import { Counter } from "./Counter";
 import { fetchApi } from "./API/starWars";
 import { List, Typography } from "antd";
-const App = () => {
-  const [films, setFilms] = useState([]);
+const Film = () => {
+  const [planets, setPlanets] = useState();
 
   useEffect(() => {
-    fetchApi("films/", setFilms);
+    fetchApi("planets/", setPlanets);
   }, []);
-  console.log(films);
 
   return (
     <>
-      <Counter>ciao</Counter>
+      <Counter></Counter>
       <List
         bordered
-        dataSource={films}
-        renderItem={(film) => (
+        dataSource={planets}
+        renderItem={(planets) => (
           <List.Item>
-            <Typography.Text>{film.title}</Typography.Text>
+            <Typography.Text>{planets.name}</Typography.Text>
           </List.Item>
         )}
       />
@@ -26,4 +25,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Film;
