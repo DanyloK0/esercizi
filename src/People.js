@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { fetchApi } from "./API/starWars";
 import { Table } from "antd";
+import "antd/dist/antd.css";
 import "./style.css";
 
 const columns = [
@@ -19,11 +20,6 @@ const columns = [
     title: "gender",
     dataIndex: "gender",
     key: "gender",
-    filters: [
-      { text: "male", value: "male" },
-      { text: "female", value: "female" },
-      { text: "n/a", value: "n/a" },
-    ],
   },
   {
     title: "height",
@@ -33,6 +29,7 @@ const columns = [
       compare: (a, b) => a.height - b.height,
       multiple: 2,
     },
+    showSorterTooltip: false,
   },
 
   {
@@ -43,6 +40,7 @@ const columns = [
       compare: (a, b) => a.mass - b.mass,
       multiple: 2,
     },
+    showSorterTooltip: false,
   },
 ];
 
@@ -54,13 +52,7 @@ const People = () => {
   }, []);
 
   return (
-    <>
-      <Table
-        style={{ padding: "24px" }}
-        columns={columns}
-        dataSource={People}
-      />
-    </>
+    <Table style={{ padding: "24px" }} columns={columns} dataSource={People} />
   );
 };
 
